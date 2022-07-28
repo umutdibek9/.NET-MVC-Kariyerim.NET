@@ -1,0 +1,151 @@
+﻿@model DTO.IsilaniDTO
+@{
+    ViewBag.Title = "IlanOlustur";
+    Layout = "~/Areas/Admin/Views/Shared/_IsverenLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Kariyerim.NET</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+
+    <link href="~/Areas/Admin/Content/Css/ilanolustur.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    @using (Html.BeginForm("IlanOlustur", "Isveren", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <h3 class="text-center mt-3">İlan Oluşturma Sayfası</h3>
+
+        <b>Logo için fotoğraf ekleyebilirsiniz (.jpeg ve .png uzantılı dosyalar kabul edilmektedir)</b>
+        <br />
+        <input id="fileInput" type="file" name="LogoURL" accept=".png,.jpg,.jpeg" />
+
+        <br />
+
+        <div class="mt-3">
+            <div class="input-group-prepend" cols="200">
+                <span class="input-group-text">İlan Adı</span>
+            </div>
+            <div>
+                @Html.EditorFor(model => model.ilanadi, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+
+            </div>
+        </div>
+
+        <div class="mt-3">
+            <div class="input-group-prepend" cols="200">
+                <span class="input-group-text">Şirket İsmi</span>
+            </div>
+            <div>
+                @Html.EditorFor(model => model.SirketIsmi, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+
+            </div>
+        </div>
+
+
+        <div class="mt-3">
+            <div class="input-group-prepend" cols="200">
+                <span class="input-group-text">Açıklama</span>
+            </div>
+            <div>
+                @Html.EditorFor(model => model.aciklama, new { htmlAttributes = new { @class = "", @cols = 108, @rows = 3, @required = "required" } })
+
+            </div>
+        </div>
+        <div class="mt-3">
+            <div class="input-group-prepend" cols="200">
+                <span class="input-group-text">Adres</span>
+            </div>
+            <div>
+                @Html.EditorFor(model => model.adres, new { htmlAttributes = new { @class = "", @cols = 108, @rows = 3, @required = "required" } })
+
+            </div>
+        </div>
+        <div class="my-3">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="sehirTipi">İl</label>
+                </div>
+                @Html.DropDownListFor(model => model.il,
+                      new List<SelectListItem> {
+                           new SelectListItem { Value = "" , Text = "Şehir Seçilmedi.." ,Disabled=true,Selected=true},
+                           new SelectListItem { Value = "istanbul" , Text = "İstanbul" },
+                           new SelectListItem { Value = "ankara" , Text = "Ankara" }
+                        },
+                      new { @class = "myselect", @required = "required", @onchange = "showsehirTipi()", @id = "sehirTipi" })
+            </div>
+        </div>
+        <div class="my-3" id="ilceTipi">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="ilceTipi">İlce</label>
+                </div>
+                @Html.DropDownListFor(model => model.ilce,
+                      new List<SelectListItem> {
+                           new SelectListItem { Value = "" , Text = "İlçe Seçilmedi.." ,Disabled=true,Selected=true},
+                           new SelectListItem { Value = "avrupa" , Text = "Avrupa" },
+                           new SelectListItem { Value = "asya" , Text = "Asya" }
+                        },
+                      new { @class = "myselect2", @id = "myselect2" })
+            </div>
+        </div>
+        <div class="my-3" id="ilceTipi2">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="ilceTipi2">İlce</label>
+                </div>
+                @Html.DropDownListFor(model => model.ilce,
+                      new List<SelectListItem> {
+                           new SelectListItem { Value = "" , Text = "İlçe Seçilmedi.." ,Disabled=true,Selected=true},
+                           new SelectListItem { Value = "cankaya" , Text = "Çankaya" },
+                           new SelectListItem { Value = "etimesgut" , Text = "Etimesgut" }
+                        },
+                      new { @class = "myselect3", @id = "myselect3" })
+            </div>
+        </div>
+
+        <div class="my-3" id="sektorTipi">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="sektorTipi">Sektör</label>
+                </div>
+                @Html.DropDownListFor(model => model.Sektor,
+                      new List<SelectListItem> {
+                           new SelectListItem { Value = "" , Text = "Sektör Seçilmedi.." ,Disabled=true,Selected=true},
+                           new SelectListItem { Value = "bilisim" , Text = "Bilisim" },
+                           new SelectListItem { Value = "guvenlik" , Text = "Güvenlik" },
+                           new SelectListItem { Value = "enerji" , Text = "Enerji" },
+                           new SelectListItem { Value = "gida" , Text = "Gıda" },
+                           new SelectListItem { Value = "kimya" , Text = "Kimya" },
+                           new SelectListItem { Value = "sağlık" , Text = "Sağlık" }
+                        },
+                      new { @class = "myselect4", @required = "required" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button id="_ilankaydet" type="submit" class="btn btn-success" style="float: right;">Kaydet</button>
+            </div>
+        </div>
+    </div>
+    }
+</body>
+</html>
+@section Scripts{
+    <script src="~/Areas/Admin/Content/JS/js.js"></script>
+}

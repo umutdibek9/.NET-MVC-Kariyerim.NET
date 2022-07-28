@@ -1,0 +1,100 @@
+﻿@model List<DTO.KullaniciCvDTO>
+@{
+    ViewBag.Title = "Cv";
+    Layout = "~/Areas/Admin/Views/Shared/_KullaniciLayout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/Areas/Admin/Content/Css/cv.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <br />
+    <ul id="navbar" class="nav nav-tabs">
+        <li class="nav-item">
+            <a id="aktif" class="nav-link active">Aktif Dosyalarım (@Model.Count(item => item.CvDurum == DTO.CvDurum.Aktif))</a>
+        </li>
+        <li class="nav-item">
+            <a id="kaldirilmis" class="nav-link">Kaldırılan Dosyalarım (@Model.Count(item => item.CvDurum == DTO.CvDurum.Kaldirilmis))</a>
+        </li>
+
+    </ul>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="myTable" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Dosyalar</th>
+                        <th>Dosya Detay</th>
+                        <th>Revize Et</th>
+                        <th>Dosyayı Kaldır</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Count() != 0) {
+
+                        int sayac = 1;
+                        foreach (var i in Model.Where(i => i.CvDurum == DTO.CvDurum.Aktif))
+                        {
+                    <tr id="tt">
+
+                        <td colspan="1" style="font-family: Lucida Console, Helvetica, Fantasy; ">#@sayac</td>
+
+
+                        <td style="font-family:  Helvetica, Sans-serif; "><a href="@Url.Action("CvDetay", "Kullanici", new {id = i.ID })" class="btn btn-info">Dosya Detay...</a>
+
+                        <td style="font-family: Helvetica, Sans-serif; "> <a href="@Url.Action("CvRevize", "Kullanici",new {id = i.ID })" class="btn btn-warning">Revize Et...</a></td>
+
+                        <td style="font-family:  Helvetica, Sans-serif; ">
+                            <a href="@Url.Action("IlaniKaldir2", "Kullanici",new {id = i.ID })" class="btn btn-danger">Dosya Kaldır...</a>
+                        </td>
+
+                    </tr>
+                        sayac++;
+                    }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table id="myTable2" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Dosyalar</th>
+                        <th>Dosya Detay</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Count() != 0) {
+                        int sayac2 = 1;
+                        foreach (var i in Model.Where(item => item.CvDurum == DTO.CvDurum.Kaldirilmis))
+                    {
+                    <tr id="tt">
+
+                        <td colspan="1">#@sayac2</td>
+
+
+                        <td><a href="@Url.Action("CvDetay", "Kullanici", new { id = i.ID } )" class="btn btn-info">Dosya Detay</a>
+
+                    </tr>
+                            sayac2++;
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
+@section Scripts{
+    <script src="~/Areas/Admin/Content/JS/cv.js"></script>
+}

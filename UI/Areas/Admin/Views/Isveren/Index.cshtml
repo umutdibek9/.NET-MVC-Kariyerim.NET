@@ -1,0 +1,93 @@
+﻿@model List<DTO.IsilaniDTO>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_IsverenLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/Areas/Admin/Content/Css/Ilanlar.css" rel="stylesheet" />
+</head>
+
+<body>
+    <br />
+    <ul id="navbar" class="nav nav-tabs">
+        <li class="nav-item">
+            <a id="aktif" class="nav-link active">Aktif İlanlarım (@Model.Count(item => item.Durum == DTO.Durum.Aktif))</a>
+        </li>
+        <li class="nav-item">
+            <a id="kaldirilmis" class="nav-link">Kaldırılan İlanlarım (@Model.Count(item => item.Durum == DTO.Durum.Kaldirilmis))</a>
+        </li>
+
+    </ul>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="myTable" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>İlan Adı</th>
+                        <th>Detay</th>
+                        <th>Revize Et</th>
+                        <th>İlanı Kaldır</th>
+                        <th>Başvuruları Görüntüle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var i in Model.Where(item => item.Durum == DTO.Durum.Aktif))
+                    {
+                    <tr id="tt">
+
+                        <td colspan="1">@i.ilanadi</td>
+
+                        <td><a href="@Url.Action("IlanDetay", "Isveren", new {id = i.ID })" class="btn btn-primary">Detay</a>
+
+                        <td> <a href="@Url.Action("IlanRevize", "Isveren",new {id = i.ID })" class="btn btn-warning">Revize Et</a></td>
+
+                        <td>
+                            <a href="@Url.Action("IlaniKaldir", "Isveren",new {id = i.ID })" class="btn btn-danger">İlanı Kaldır</a>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("basvurusayfasi", "Isveren",new {id = i.ID })" class="btn btn-info">Başvuruları Goruntule</a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table id="myTable2" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>İlan Adı</th>
+                        <th>Detay</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var i in Model.Where(item => item.Durum == DTO.Durum.Kaldirilmis))
+                    {
+                        <tr id="tt">
+
+                            <td colspan="1">@i.ilanadi</td>
+
+                            <td><a href="@Url.Action("IlanDetay", "Isveren", new {id = i.ID })" class="btn btn-primary">Detay</a>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
+    @section Scripts{
+
+        <script src="~/Areas/Admin/Content/JS/Ilanlar.js"></script>
+
+    }

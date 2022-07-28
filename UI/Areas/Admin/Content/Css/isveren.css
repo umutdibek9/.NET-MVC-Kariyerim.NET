@@ -1,0 +1,14 @@
+﻿
+.form-control {
+    background-color: #e9ecef;
+    opacity: 1;
+    width:80%;
+}
+#fileInput {
+    opacity: 1;
+    background-color: #e9ecef;
+}
+#logo-text {
+    opacity: 1;
+    padding: 12px 20px;
+}

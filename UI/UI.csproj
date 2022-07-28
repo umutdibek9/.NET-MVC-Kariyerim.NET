@@ -1,0 +1,439 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5C2424A-3E2C-4848-9CC6-B3F09577658B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UI</RootNamespace>
+    <AssemblyName>UI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44321</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Content\assets2\chart-area-demo.js" />
+    <Content Include="Areas\Admin\Content\assets2\chart-bar-demo.js" />
+    <Content Include="Areas\Admin\Content\assets2\chart-pie-demo.js" />
+    <Content Include="Areas\Admin\Content\assets2\datatables-demo.js" />
+    <Content Include="Areas\Admin\Content\assets2\datatables-simple-demo.js" />
+    <Content Include="Areas\Admin\Content\assets2\scripts.js" />
+    <Content Include="Areas\Admin\Content\assets2\styles.css" />
+    <Content Include="Areas\Admin\Content\assets\animations.css" />
+    <Content Include="Areas\Admin\Content\assets\apexcharts.min.js" />
+    <Content Include="Areas\Admin\Content\assets\apple-touch-icon.png" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap-grid.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap-grid.min.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap-grid.rtl.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap-grid.rtl.min.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap-icons.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap-reboot.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap-reboot.min.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap-reboot.rtl.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap-utilities.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap-utilities.min.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap-utilities.rtl.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap.bundle.js" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap.bundle.min.js" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap.esm.js" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap.esm.min.js" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap.js" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap.rtl.css" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap.rtl.min.css" />
+    <Content Include="Areas\Admin\Content\assets\boxicons.css" />
+    <Content Include="Areas\Admin\Content\assets\boxicons.min.css" />
+    <Content Include="Areas\Admin\Content\assets\card.jpg" />
+    <Content Include="Areas\Admin\Content\assets\chart.esm.js" />
+    <Content Include="Areas\Admin\Content\assets\chart.js" />
+    <Content Include="Areas\Admin\Content\assets\chart.min.js" />
+    <Content Include="Areas\Admin\Content\assets\content.css" />
+    <Content Include="Areas\Admin\Content\assets\content.inline.css" />
+    <Content Include="Areas\Admin\Content\assets\content.inline.min.css" />
+    <Content Include="Areas\Admin\Content\assets\content.min.css" />
+    <Content Include="Areas\Admin\Content\assets\content.mobile.css" />
+    <Content Include="Areas\Admin\Content\assets\content.mobile.min.css" />
+    <Content Include="Areas\Admin\Content\assets\echarts.min.js" />
+    <Content Include="Areas\Admin\Content\assets\favicon.png" />
+    <Content Include="Areas\Admin\Content\assets\helpers.esm.js" />
+    <Content Include="Areas\Admin\Content\assets\helpers.segment.js" />
+    <Content Include="Areas\Admin\Content\assets\index.js" />
+    <Content Include="Areas\Admin\Content\assets\jquery.tinymce.js" />
+    <Content Include="Areas\Admin\Content\assets\jquery.tinymce.min.js" />
+    <Content Include="Areas\Admin\Content\assets\license.txt" />
+    <Content Include="Areas\Admin\Content\assets\logo.png" />
+    <Content Include="Areas\Admin\Content\assets\messages-1.jpg" />
+    <Content Include="Areas\Admin\Content\assets\messages-2.jpg" />
+    <Content Include="Areas\Admin\Content\assets\messages-3.jpg" />
+    <Content Include="Areas\Admin\Content\assets\news-1.jpg" />
+    <Content Include="Areas\Admin\Content\assets\news-2.jpg" />
+    <Content Include="Areas\Admin\Content\assets\news-3.jpg" />
+    <Content Include="Areas\Admin\Content\assets\news-4.jpg" />
+    <Content Include="Areas\Admin\Content\assets\news-5.jpg" />
+    <Content Include="Areas\Admin\Content\assets\not-found.svg" />
+    <Content Include="Areas\Admin\Content\assets\product-1.jpg" />
+    <Content Include="Areas\Admin\Content\assets\product-2.jpg" />
+    <Content Include="Areas\Admin\Content\assets\product-3.jpg" />
+    <Content Include="Areas\Admin\Content\assets\product-4.jpg" />
+    <Content Include="Areas\Admin\Content\assets\product-5.jpg" />
+    <Content Include="Areas\Admin\Content\assets\profile-img.jpg" />
+    <Content Include="Areas\Admin\Content\assets\quill.bubble.css" />
+    <Content Include="Areas\Admin\Content\assets\quill.core.css" />
+    <Content Include="Areas\Admin\Content\assets\quill.core.js" />
+    <Content Include="Areas\Admin\Content\assets\quill.js" />
+    <Content Include="Areas\Admin\Content\assets\quill.min.js" />
+    <Content Include="Areas\Admin\Content\assets\quill.snow.css" />
+    <Content Include="Areas\Admin\Content\assets\remixicon.css" />
+    <Content Include="Areas\Admin\Content\assets\remixicon.svg" />
+    <Content Include="Areas\Admin\Content\assets\remixicon.symbol.svg" />
+    <Content Include="Areas\Admin\Content\assets\simple-datatables.js" />
+    <Content Include="Areas\Admin\Content\assets\skin.css" />
+    <Content Include="Areas\Admin\Content\assets\skin.min.css" />
+    <Content Include="Areas\Admin\Content\assets\skin.mobile.css" />
+    <Content Include="Areas\Admin\Content\assets\skin.mobile.min.css" />
+    <Content Include="Areas\Admin\Content\assets\skin.shadowdom.css" />
+    <Content Include="Areas\Admin\Content\assets\skin.shadowdom.min.css" />
+    <Content Include="Areas\Admin\Content\assets\slides-1.jpg" />
+    <Content Include="Areas\Admin\Content\assets\slides-2.jpg" />
+    <Content Include="Areas\Admin\Content\assets\slides-3.jpg" />
+    <Content Include="Areas\Admin\Content\assets\style.css" />
+    <Content Include="Areas\Admin\Content\assets\theme.js" />
+    <Content Include="Areas\Admin\Content\assets\theme.min.js" />
+    <Content Include="Areas\Admin\Content\assets\tinymce.js" />
+    <Content Include="Areas\Admin\Content\assets\tinymce.min.js" />
+    <Content Include="Areas\Admin\Content\assets\transformations.css" />
+    <Content Include="Areas\Admin\Content\assets\validate.js" />
+    <Content Include="Areas\Admin\Content\Css\basvurusayfasi.css" />
+    <Content Include="Areas\Admin\Content\Css\cv.css" />
+    <Content Include="Areas\Admin\Content\Css\kayitol.css" />
+    <Content Include="Areas\Admin\Content\Css\cvrevize3.css" />
+    <Content Include="Areas\Admin\Content\Css\CvOlustur.css" />
+    <Content Include="Areas\Admin\Content\Css\cv2.css" />
+    <Content Include="Areas\Admin\Content\Css\cvrevize1.css" />
+    <Content Include="Areas\Admin\Content\Css\cvrevize2.css" />
+    <Content Include="Areas\Admin\Content\Css\flex-slider.css" />
+    <Content Include="Areas\Admin\Content\Css\fontawesome.css" />
+    <Content Include="Areas\Admin\Content\Css\isdetay.css" />
+    <Content Include="Areas\Admin\Content\Css\isdetay2.css" />
+    <Content Include="Areas\Admin\Content\Css\ilandetay2.css" />
+    <Content Include="Areas\Admin\Content\Css\ilandetay.css" />
+    <Content Include="Areas\Admin\Content\Css\Ilanlar.css" />
+    <Content Include="Areas\Admin\Content\Css\ilanolustur.css" />
+    <Content Include="Areas\Admin\Content\Css\IsAra.css" />
+    <Content Include="Areas\Admin\Content\Css\isveren.css" />
+    <Content Include="Areas\Admin\Content\Css\owl.css" />
+    <Content Include="Areas\Admin\Content\Css\slider.css" />
+    <Content Include="Areas\Admin\Content\Css\style.css" />
+    <Content Include="Areas\Admin\Content\Css\templatemo-stand-blog.css" />
+    <Content Include="Areas\Admin\Content\JS\accordions.js" />
+    <Content Include="Areas\Admin\Content\JS\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Content\JS\custom.js" />
+    <Content Include="Areas\Admin\Content\JS\cv.js" />
+    <Content Include="Areas\Admin\Content\JS\Ilanlar.js" />
+    <Content Include="Areas\Admin\Content\JS\CvRevize.js" />
+    <Content Include="Areas\Admin\Content\JS\isotope.js" />
+    <Content Include="Areas\Admin\Content\JS\jquery.min.js" />
+    <Content Include="Areas\Admin\Content\JS\IlanRevize.js" />
+    <Content Include="Areas\Admin\Content\JS\cvolustur.js" />
+    <Content Include="Areas\Admin\Content\JS\main.js" />
+    <Content Include="Areas\Admin\Content\JS\owl.js" />
+    <Content Include="Areas\Admin\Content\JS\popper.js" />
+    <Content Include="Areas\Admin\Content\JS\slick.js" />
+    <Content Include="Areas\Admin\Content\JS\slider.js" />
+    <Content Include="Areas\Uploads\Logo\50 Graduation Party Ideas to Celebrate Your Grad%27s Big Day.jpg" />
+    <Content Include="Areas\Uploads\Logo\downarrow.png" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Content Include="Areas\Admin\Content\JS\js.js" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\IsverenController.cs" />
+    <Compile Include="Areas\Admin\Controllers\KullaniciController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Content Include="Areas\Admin\Views\Isveren\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_IsverenLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\IsLogin.cshtml" />
+    <Content Include="Areas\Admin\Views\Isveren\IlanOlustur.cshtml" />
+    <Content Include="Areas\Admin\Views\Isveren\IlanDetay.cshtml" />
+    <Content Include="Areas\Admin\Views\Isveren\IlanRevize.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\KullaniciLogin.cshtml" />
+    <Content Include="Areas\Admin\Views\Kullanici\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_KullaniciLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Kullanici\CvOlustur.cshtml" />
+    <Content Include="Areas\Admin\Views\Kullanici\Cv.cshtml" />
+    <Content Include="Areas\Admin\Views\Kullanici\CvRevize.cshtml" />
+    <Content Include="Areas\Admin\Views\Kullanici\CvDetay.cshtml" />
+    <Content Include="Areas\Admin\Views\Kullanici\IsAra.cshtml" />
+    <Content Include="Areas\Admin\Views\Kullanici\IsDetay.cshtml" />
+    <Content Include="Areas\Admin\Views\Isveren\basvurusayfasi.cshtml" />
+    <Content Include="Areas\Admin\Views\Isveren\KullaniciCvDetay.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\KayitOl.cshtml" />
+    <None Include="Areas\Admin\Views\Shared\_SiteLayout.cshtml" />
+    <Compile Include="Areas\Admin\Controllers\SiteController.cs" />
+    <Compile Include="Areas\Admin\Roles\KullaniciRoleProvider.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Content\assets\bootstrap-icons.json" />
+    <Content Include="Areas\Admin\Content\assets\bower.json" />
+    <Content Include="Areas\Admin\Content\assets\composer.json" />
+    <Content Include="Areas\Admin\Content\assets\package.json" />
+    <Content Include="Areas\Admin\Content\assets\quill.min.js.map" />
+    <Content Include="Areas\Admin\Content\assets\README.md" />
+    <Content Include="Areas\Admin\Content\assets\ar.json" />
+    <Content Include="Areas\Admin\Content\assets\ca.json" />
+    <Content Include="Areas\Admin\Content\assets\cs.json" />
+    <Content Include="Areas\Admin\Content\assets\de.json" />
+    <Content Include="Areas\Admin\Content\assets\el.json" />
+    <Content Include="Areas\Admin\Content\assets\en.json" />
+    <Content Include="Areas\Admin\Content\assets\es.json" />
+    <Content Include="Areas\Admin\Content\assets\fa.json" />
+    <Content Include="Areas\Admin\Content\assets\fi.json" />
+    <Content Include="Areas\Admin\Content\assets\fr.json" />
+    <Content Include="Areas\Admin\Content\assets\he.json" />
+    <Content Include="Areas\Admin\Content\assets\hi.json" />
+    <Content Include="Areas\Admin\Content\assets\hr.json" />
+    <Content Include="Areas\Admin\Content\assets\hu.json" />
+    <Content Include="Areas\Admin\Content\assets\hy.json" />
+    <Content Include="Areas\Admin\Content\assets\id.json" />
+    <Content Include="Areas\Admin\Content\assets\it.json" />
+    <Content Include="Areas\Admin\Content\assets\ja.json" />
+    <Content Include="Areas\Admin\Content\assets\ka.json" />
+    <Content Include="Areas\Admin\Content\assets\ko.json" />
+    <Content Include="Areas\Admin\Content\assets\lt.json" />
+    <Content Include="Areas\Admin\Content\assets\nb.json" />
+    <Content Include="Areas\Admin\Content\assets\nl.json" />
+    <Content Include="Areas\Admin\Content\assets\pl.json" />
+    <Content Include="Areas\Admin\Content\assets\pt-br.json" />
+    <Content Include="Areas\Admin\Content\assets\pt.json" />
+    <Content Include="Areas\Admin\Content\assets\rs.json" />
+    <Content Include="Areas\Admin\Content\assets\ru.json" />
+    <Content Include="Areas\Admin\Content\assets\se.json" />
+    <Content Include="Areas\Admin\Content\assets\sk.json" />
+    <Content Include="Areas\Admin\Content\assets\sl.json" />
+    <Content Include="Areas\Admin\Content\assets\sq.json" />
+    <Content Include="Areas\Admin\Content\assets\th.json" />
+    <Content Include="Areas\Admin\Content\assets\tr.json" />
+    <Content Include="Areas\Admin\Content\assets\ua.json" />
+    <Content Include="Areas\Admin\Content\assets\zh-cn.json" />
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Content\assets\remixicon.eot" />
+    <Content Include="Areas\Admin\Content\assets\remixicon.less" />
+    <Content Include="Areas\Admin\Content\assets\remixicon.ttf" />
+    <Content Include="Areas\Admin\Content\assets\remixicon.woff" />
+    <Content Include="Areas\Admin\Content\assets\remixicon.woff2" />
+    <Content Include="Areas\Admin\Content\assets\tinymce-mobile.woff" />
+    <Content Include="Areas\Admin\Views\Site\Index.cshtml" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BBL\BBL.csproj">
+      <Project>{23ecb49b-450c-4184-b842-7f31d562eb71}</Project>
+      <Name>BBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{bb454ff9-f80d-4fe2-9c9d-236c340849f8}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Areas\Admin\Content\assets\tinymce.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58453</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44321/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

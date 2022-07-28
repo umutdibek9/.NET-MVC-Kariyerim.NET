@@ -1,0 +1,47 @@
+﻿@model List<DTO.IsilaniDTO>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/Areas/Admin/Content/Css/Ilanlar.css" rel="stylesheet" />
+</head>
+
+<body>
+    <br />
+
+    <div class="row">
+        <div class="col-md-12">
+            <table id="myTable" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>İlan Adı</th>
+                        <th>İlanı Kaldır</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var i in Model.Where(item => item.Durum == DTO.Durum.Aktif))
+                    {
+                        <tr id="tt">
+
+                            <td colspan="1">@i.ilanadi</td>
+
+                            
+                          
+                            <td>
+                                <a href="@Url.Action("Kaldir", "Admin",new {id = i.ID })" class="btn btn-danger">İlanı Kaldır</a>
+                            </td>
+                           
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

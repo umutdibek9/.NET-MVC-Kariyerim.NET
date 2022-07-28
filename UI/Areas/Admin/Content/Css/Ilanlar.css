@@ -1,0 +1,253 @@
+﻿
+#myTable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #myTable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: white;
+        color: black;
+    }
+
+
+    #myTable td {
+        text-align: left; /* Left-align text */
+        color: black;
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #myTable tr {
+        /* Add a bottom border to all table rows */
+        border-bottom: 1px solid #ddd;
+    }
+
+        #myTable tr:hover {
+            background-color: #ddd;
+        }
+
+        #myTable tr.header, #myTable tr:hover {
+            /* Add a grey background color to the table header and on hover */
+            background-color: #f1f1f1;
+        }
+
+
+
+
+
+#myTable2 {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #myTable2 th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: white;
+        color: black;
+    }
+
+
+    #myTable2 td {
+        text-align: left; /* Left-align text */
+        color: black;
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #myTable2 tr {
+        /* Add a bottom border to all table rows */
+        border-bottom: 1px solid #ddd;
+    }
+
+        #myTable2 tr:hover {
+            background-color: #ddd;
+        }
+
+        #myTable2 tr.header, #myTable2 tr:hover {
+            /* Add a grey background color to the table header and on hover */
+            background-color: #f1f1f1;
+        }
+
+
+
+#myTable3 {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #myTable3 th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: white;
+        color: black;
+    }
+
+
+    #myTable3 td {
+        text-align: left; /* Left-align text */
+        color: black;
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #myTable3 tr {
+        /* Add a bottom border to all table rows */
+        border-bottom: 1px solid #ddd;
+    }
+
+        #myTable3 tr:hover {
+            background-color: #ddd;
+        }
+
+        #myTable3 tr.header, #myTable3 tr:hover {
+            /* Add a grey background color to the table header and on hover */
+            background-color: #f1f1f1;
+        }
+
+
+
+#myTable3 {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #myTable3 th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: white;
+        color: black;
+    }
+
+
+#myTable4 td {
+    text-align: left; /* Left-align text */
+    color: black;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#myTable4 tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd;
+}
+
+    #myTable4 tr:hover {
+        background-color: #ddd;
+    }
+
+    #myTable4 tr.header, #myTable4 tr:hover {
+        /* Add a grey background color to the table header and on hover */
+        background-color: #f1f1f1;
+    }
+
+
+#myTable3 {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #myTable3 th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: white;
+        color: black;
+    }
+
+
+#myTable5 td {
+    text-align: left; /* Left-align text */
+    color: black;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#myTable5 tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd;
+}
+
+    #myTable5 tr:hover {
+        background-color: #ddd;
+    }
+
+    #myTable5 tr.header, #myTable5 tr:hover {
+        /* Add a grey background color to the table header and on hover */
+        background-color: #f1f1f1;
+    }
+/* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+    /* Sidebar links */
+    .sidebar a {
+        display: block;
+        color: black;
+        padding: 16px;
+        text-decoration: none;
+    }
+
+        /* Active/current link */
+        .sidebar a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        /* Links on mouse-over */
+        .sidebar a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+
+/* Style the navbar */
+#navbar {
+    overflow: hidden;
+    background-color: white;
+    cursor: pointer;
+}
+
+    /* Navbar links */
+    #navbar a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+    }
+
+/* Page content */
+.content {
+    padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+    /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+    .sticky + .content {
+        padding-top: 60px;
+    }

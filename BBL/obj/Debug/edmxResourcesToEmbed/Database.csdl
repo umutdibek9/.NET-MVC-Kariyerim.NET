@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbContextModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Soyad" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="RolId" Type="Int32" />
+    <NavigationProperty Name="Rol_Table" Relationship="Self.FK_Admin_Rol_Table" FromRole="Admin" ToRole="Rol_Table" />
+  </EntityType>
+  <EntityType Name="Basvurular">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="kullaniciid" Type="Int32" Nullable="false" />
+    <Property Name="isilaniid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Isilani" Relationship="Self.FK_Basvurular_Isilani" FromRole="Basvurular" ToRole="Isilani" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK_Basvurular_Kullanici" FromRole="Basvurular" ToRole="Kullanici" />
+  </EntityType>
+  <EntityType Name="Isilani">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SirketIsmi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="isverenid" Type="Int32" Nullable="false" />
+    <Property Name="logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="il" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ilce" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sektor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Durum" Type="Int32" />
+    <Property Name="YayımlamaTarihi" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Basvurulars" Relationship="Self.FK_Basvurular_Isilani" FromRole="Isilani" ToRole="Basvurular" />
+    <NavigationProperty Name="Isveren" Relationship="Self.FK_Isilani_Isveren" FromRole="Isilani" ToRole="Isveren" />
+  </EntityType>
+  <EntityType Name="Isveren">
+    <Key>
+      <PropertyRef Name="IsverenId" />
+    </Key>
+    <Property Name="IsverenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Eposta" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+    <Property Name="Soyad" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="RolId" Type="Int32" />
+    <NavigationProperty Name="Isilanis" Relationship="Self.FK_Isilani_Isveren" FromRole="Isveren" ToRole="Isilani" />
+    <NavigationProperty Name="Rol_Table" Relationship="Self.FK_Isveren_Rol_Table" FromRole="Isveren" ToRole="Rol_Table" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="KullaniciId" />
+    </Key>
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ad" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Soyad" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="RolId" Type="Int32" />
+    <NavigationProperty Name="Basvurulars" Relationship="Self.FK_Basvurular_Kullanici" FromRole="Kullanici" ToRole="Basvurular" />
+    <NavigationProperty Name="Rol_Table" Relationship="Self.FK_Kullanici_Rol_Table" FromRole="Kullanici" ToRole="Rol_Table" />
+    <NavigationProperty Name="KullaniciCvs" Relationship="Self.FK_KullaniciCv_Kullanici" FromRole="Kullanici" ToRole="KullaniciCv" />
+  </EntityType>
+  <EntityType Name="KullaniciCv">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Okul" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="kullaniciid" Type="Int32" Nullable="false" />
+    <Property Name="AGNO" Type="Double" />
+    <Property Name="CalisilanYerler" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Onyazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BeklenenUcret" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK_KullaniciCv_Kullanici" FromRole="KullaniciCv" ToRole="Kullanici" />
+  </EntityType>
+  <EntityType Name="Rol_Table">
+    <Key>
+      <PropertyRef Name="RolID" />
+    </Key>
+    <Property Name="RolID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Admins" Relationship="Self.FK_Admin_Rol_Table" FromRole="Rol_Table" ToRole="Admin" />
+    <NavigationProperty Name="Isverens" Relationship="Self.FK_Isveren_Rol_Table" FromRole="Rol_Table" ToRole="Isveren" />
+    <NavigationProperty Name="Kullanicis" Relationship="Self.FK_Kullanici_Rol_Table" FromRole="Rol_Table" ToRole="Kullanici" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Admin_Rol_Table">
+    <End Role="Rol_Table" Type="Self.Rol_Table" Multiplicity="0..1" />
+    <End Role="Admin" Type="Self.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol_Table">
+        <PropertyRef Name="RolID" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Basvurular_Isilani">
+    <End Role="Isilani" Type="Self.Isilani" Multiplicity="1" />
+    <End Role="Basvurular" Type="Self.Basvurular" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Isilani">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Basvurular">
+        <PropertyRef Name="isilaniid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Basvurular_Kullanici">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1" />
+    <End Role="Basvurular" Type="Self.Basvurular" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="KullaniciId" />
+      </Principal>
+      <Dependent Role="Basvurular">
+        <PropertyRef Name="kullaniciid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Isilani_Isveren">
+    <End Role="Isveren" Type="Self.Isveren" Multiplicity="1" />
+    <End Role="Isilani" Type="Self.Isilani" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Isveren">
+        <PropertyRef Name="IsverenId" />
+      </Principal>
+      <Dependent Role="Isilani">
+        <PropertyRef Name="isverenid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Isveren_Rol_Table">
+    <End Role="Rol_Table" Type="Self.Rol_Table" Multiplicity="0..1" />
+    <End Role="Isveren" Type="Self.Isveren" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol_Table">
+        <PropertyRef Name="RolID" />
+      </Principal>
+      <Dependent Role="Isveren">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kullanici_Rol_Table">
+    <End Role="Rol_Table" Type="Self.Rol_Table" Multiplicity="0..1" />
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol_Table">
+        <PropertyRef Name="RolID" />
+      </Principal>
+      <Dependent Role="Kullanici">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KullaniciCv_Kullanici">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1" />
+    <End Role="KullaniciCv" Type="Self.KullaniciCv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="KullaniciId" />
+      </Principal>
+      <Dependent Role="KullaniciCv">
+        <PropertyRef Name="kullaniciid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbContextEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Basvurulars" EntityType="Self.Basvurular" />
+    <EntitySet Name="Isilanis" EntityType="Self.Isilani" />
+    <EntitySet Name="Isverens" EntityType="Self.Isveren" />
+    <EntitySet Name="Kullanicis" EntityType="Self.Kullanici" />
+    <EntitySet Name="KullaniciCvs" EntityType="Self.KullaniciCv" />
+    <EntitySet Name="Rol_Table" EntityType="Self.Rol_Table" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_Admin_Rol_Table" Association="Self.FK_Admin_Rol_Table">
+      <End Role="Rol_Table" EntitySet="Rol_Table" />
+      <End Role="Admin" EntitySet="Admins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Basvurular_Isilani" Association="Self.FK_Basvurular_Isilani">
+      <End Role="Isilani" EntitySet="Isilanis" />
+      <End Role="Basvurular" EntitySet="Basvurulars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Basvurular_Kullanici" Association="Self.FK_Basvurular_Kullanici">
+      <End Role="Kullanici" EntitySet="Kullanicis" />
+      <End Role="Basvurular" EntitySet="Basvurulars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Isilani_Isveren" Association="Self.FK_Isilani_Isveren">
+      <End Role="Isveren" EntitySet="Isverens" />
+      <End Role="Isilani" EntitySet="Isilanis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Isveren_Rol_Table" Association="Self.FK_Isveren_Rol_Table">
+      <End Role="Rol_Table" EntitySet="Rol_Table" />
+      <End Role="Isveren" EntitySet="Isverens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kullanici_Rol_Table" Association="Self.FK_Kullanici_Rol_Table">
+      <End Role="Rol_Table" EntitySet="Rol_Table" />
+      <End Role="Kullanici" EntitySet="Kullanicis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KullaniciCv_Kullanici" Association="Self.FK_KullaniciCv_Kullanici">
+      <End Role="Kullanici" EntitySet="Kullanicis" />
+      <End Role="KullaniciCv" EntitySet="KullaniciCvs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9aa08ec99de245c2b4b88d96ce7ceb98" Name="Diagram1">
+        <EntityTypeShape EntityType="DbContextModel.Admin" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextModel.Basvurular" Width="1.5" PointX="7.5" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextModel.EskiCv" Width="1.5" PointX="7.5" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextModel.EskiIlan" Width="1.5" PointX="7.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextModel.IsIlani" Width="1.5" PointX="5.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextModel.Isveren" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextModel.Kullanici" Width="1.5" PointX="3" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextModel.KullaniciCv" Width="1.5" PointX="5.25" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextModel.Rol_Table" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbContextModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="DbContextModel.FK_Admin_Rol_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextModel.FK_Basvurular_IsIlani" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextModel.FK_Basvurular_Kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextModel.FK_Basvurular_KullaniciCv" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextModel.FK_EskiCv_Kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextModel.FK_EskiCv_KullaniciCv" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextModel.FK_EskiIlan_IsIlani" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextModel.FK_EskiIlan_Isveren" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextModel.FK_IsIlani_Isveren" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextModel.FK_Isveren_Rol_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextModel.FK_Kullanici_Rol_Table" ManuallyRouted="false" />
+        <AssociationConnector Association="DbContextModel.FK_KullaniciCv_Kullanici" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

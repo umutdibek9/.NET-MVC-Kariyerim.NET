@@ -1,0 +1,41 @@
+﻿@model List<DTO.IsilaniDTO>
+@{
+    ViewBag.Title = "IsAra";
+    Layout = "~/Areas/Admin/Views/Shared/_KullaniciLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Kariyerim.NET</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link href="~/Areas/Admin/Content/Css/IsAra.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-8 col-lg-5 center">
+                <br />
+                <ul class="list-group">
+                    @foreach(var i in Model) {
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <a>@i.ilanadi</a>                       
+                        <div class="image-parent">
+                            <span>
+                                <a href="@Url.Action("IsDetay", "Kullanici", new { id = i.ID })" target="_blank">
+                                    <img src="@i.logo" class="img-fluid" alt="quixote">
+                                </a>
+                            </span>
+                        </div>
+                    </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

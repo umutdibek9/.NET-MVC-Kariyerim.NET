@@ -1,0 +1,14 @@
+C:\Users\HP\source\repos\Kariyerim.NET\BBL\bin\Debug\BBL.dll
+C:\Users\HP\source\repos\Kariyerim.NET\BBL\bin\Debug\BBL.pdb
+C:\Users\HP\source\repos\Kariyerim.NET\BBL\bin\Debug\DAL.dll
+C:\Users\HP\source\repos\Kariyerim.NET\BBL\bin\Debug\DTO.dll
+C:\Users\HP\source\repos\Kariyerim.NET\BBL\bin\Debug\DAL.pdb
+C:\Users\HP\source\repos\Kariyerim.NET\BBL\bin\Debug\DTO.pdb
+C:\Users\HP\source\repos\Kariyerim.NET\BBL\obj\Debug\BBL.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\Kariyerim.NET\BBL\obj\Debug\BBL.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\Kariyerim.NET\BBL\obj\Debug\BBL.dll
+C:\Users\HP\source\repos\Kariyerim.NET\BBL\obj\Debug\BBL.pdb
+C:\Users\HP\source\repos\Kariyerim.NET\BBL\bin\Debug\EntityFramework.dll
+C:\Users\HP\source\repos\Kariyerim.NET\BBL\bin\Debug\DAL.dll.config
+C:\Users\HP\source\repos\Kariyerim.NET\BBL\bin\Debug\EntityFramework.xml
+C:\Users\HP\source\repos\Kariyerim.NET\BBL\obj\Debug\BBL.csproj.CopyComplete

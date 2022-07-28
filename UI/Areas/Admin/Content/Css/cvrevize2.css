@@ -1,0 +1,13 @@
+﻿form {
+    border-width: 20px;
+    /* Or use shorthand border property */
+    /* width style colour */
+    border: 2px solid black;
+    padding:10px;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
